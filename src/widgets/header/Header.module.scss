@@ -1,0 +1,97 @@
+@use "@/shared/styles/variables" as *;
+@use "@/shared/styles/mixins" as *;
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background-color: $color-white;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-green;
+  border-radius: 60px 60px 0 0;
+  padding: 8px;
+  gap: 8px;
+  overflow: hidden;
+
+  @include vp-1023 {
+    border-radius: unset;
+  }
+}
+
+
+.text {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 130%;
+  text-align: center;
+  margin: 0;
+
+  @include vp-1023 {
+    font-size: 20px;
+  }
+
+  @include vp-767 {
+    font-size: 18px;
+  }
+
+  @include vp-374 {
+    font-size: 14px;
+  }
+}
+
+.timerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: $color-yellow;
+}
+
+.timer {
+  font-family: $ff-raleway;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 110%;
+  text-transform: uppercase;
+
+  @include vp-1023 {
+    font-size: 34px;
+  }
+
+  @include vp-767 {
+    font-size: 32px;
+  }
+
+  @include vp-374 {
+    font-size: 28px;
+  }
+}
+
+.timerWarning {
+  color: $color-hot-red;
+}
+
+.timerZero {
+  color: $color-white;
+}
+
+.timerBlink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.5;
+  }
+}

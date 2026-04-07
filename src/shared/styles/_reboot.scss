@@ -1,0 +1,40 @@
+@use "./variables" as *;
+@use "@/shared/styles/mixins" as *;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: $color-white;
+  font-family: $ff-montserrat;
+  background-color: $color-white;
+}
+
+.app {
+  border-radius: 60px;
+  background-color: $color-anthracite-black;
+
+  @include vp-1023 {
+    border-radius: 18px;
+  }
+}
+
+main {
+  flex-grow: 1;
+}
+
+a {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
